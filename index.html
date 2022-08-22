@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="generator" content="">
+  <title>Code-recommender - replication package</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sticky-footer-navbar/">
+
+  <!-- bootstrap 5.0.2 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <!-- Custom styles for this template -->
+  <link href="css/sticky-footer-navbar.css" rel="stylesheet">
+
+  <!-- Custom styles for this page -->
+  <link href="css/index.css" rel="stylesheet">
+
+</head>
+
+<body class="d-flex flex-column h-100">
+
+  <header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="pages/dataset.html">Dataset and Example of Instances</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="pages/source.html">Source Code</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="pages/baselines.html">Baselines</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="pages/SALOON-additional.html">SALOON: Additional Analysis
+                and Results</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="pages/STUNT-additional.html">STUNT: Additional Analysis and
+                Results</a>
+            </li>
+
+          </ul>
+          <!--
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>-->
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Begin page content -->
+  <main class="flex-shrink-0">
+    <div class="container">
+
+
+      <div class="mx-0 mx-sm-auto bg-white">
+        <div class="card">
+          <div class="card-body">
+
+
+
+            <h1 class="mt-1 text-center">Towards Summarizing Code Snippets </br> Using Pre-Trained Transformers
+            </h1>
+            <p class="col-md-12 fs-5 mt-5 px-4" style="text-align: justify;">
+
+              When comprehending code, a helping hand may come from the <b>natural language comments</b> documenting it that,
+              unfortunately, are not always there. To support developers in such a scenario several techniques have been
+              presented to automatically generate natural language summaries for a given code. Most recent approaches
+              exploit <b>deep learning (DL) models</b> to automatically document classes or functions, while very little effort
+              has been devoted to more fine-grained documentation (e.g., documenting code snippets or even a single
+              statement). </br>Such a design choice is dictated by the availability of training data: For example, in the
+              case of Java, it is easy to create datasets composed by pairs <em>&lt;method, javadoc&gt;</em> that can be fed to DL
+                models to teach them how to summarize a method. Such a <b>comment-to-code linking</b> is instead non-trivial
+                when it comes to inner comments (i.e., comments within a function) documenting a few statements. </br>In this
+                work, we take all steps needed to train a DL model to automatically document code snippets. </br>First, we
+                <em>manually built</em> a dataset featuring 11.5k comments that have been (i) classified based on their type
+                (e.g., code summary, TODO), and (ii) linked to the code statements they document. </br>Second, we used such a
+                dataset to <em>train a multi-task DL model</em> taking as input a comment and being able to (i) classify whether
+                it represents a <em>"code summary"</em> or not, and (ii) link it to the code statements it documents. Our trained
+                model identifies code summaries with 83% accuracy and is able to link them to the documented lines of
+                code with recall and precision higher than 80%. </br>Third, we run this model on 10k open source projects,
+                automatically identifying code summaries and linking them to the related documented code. This allowed
+                to build a large-scale dataset of documented code snippets that has then been used to train a new DL
+                model able to <em>automatically document code snippets</em>. A comparison with state-of-the-art baselines show
+                the <b>superiority</b> of the proposed approach which, however, is still far from representing an accurate
+                solution for snippet summarization.
+
+            </p>
+
+            <p class="col-md-12 fs-5 mt-5 px-4" style="text-align: justify;">
+              You can find the GitHub repository containing all the data and models released 
+              <a
+              href="https://github.com/snippet-summarization/icse23" class="link-primary"
+              target="_blank">here</a>.</p>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    </div>
+  </main>
+
+  <footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+      <span class="text-muted">Replication package for <em>Towards Summarizing Code Snippets Using Pre-Trained
+          Transformers</em>.</span>
+    </div>
+  </footer>
+
+
+</body>
+
+</html>
