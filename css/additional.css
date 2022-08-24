@@ -1,0 +1,44 @@
+
+#HP tr td:nth-child(2) {
+    font-style: italic;
+  }
+#HP tr td:nth-child(3) {
+    text-align: center;
+  }
+  #HP tr td:nth-child(4) {
+    text-align: center;
+  }
+
+.center{
+    text-align: center;
+
+}
+
+
+#CL tr td:nth-child(2) {
+    text-align: center;
+  }
+  #CL tr td:nth-child(3) {
+    text-align: center;
+  }
+
+  #LK tr td:nth-child(2) {
+    text-align: center;
+  }
+  #LK tr td:nth-child(3) {
+    text-align: center;
+  }
+
+
+  #ST tr td:nth-child(2) {
+    text-align: center;
+  }
+  #ST tr td:nth-child(3) {
+    text-align: center;
+  }
+  #ST tr td:nth-child(4) {
+    text-align: center;
+  }
+  #ST tr td:nth-child(5) {
+    text-align: center;
+  }

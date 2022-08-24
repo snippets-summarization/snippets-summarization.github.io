@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="generator" content="">
+  <title>Source Code</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sticky-footer-navbar/">
+
+
+  <!-- bootstrap 5.0.2 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+  <!-- Custom styles for this template -->
+  <link href="../css/sticky-footer-navbar.css" rel="stylesheet">
+
+
+  <!-- Custom styles for this sheet -->
+  <link href="../css/baselines.css" id="CSS" rel="stylesheet">
+
+
+</head>
+
+<body class="d-flex flex-column h-100">
+
+  <header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="dataset.html">Datasets and Examples of Instances</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="source.html">Source Code</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="baselines.html">Baselines</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="SALOON-additional.html">SALOON: Predictions, Additional Analysis and Results
+                and Results</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="STUNT-additional.html">STUNT: Predictions, Additional Analysis and Results</a>
+            </li>
+
+          </ul>
+          <!--
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>-->
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Begin page content -->
+  <main class="flex-shrink-0">
+    <div class="container">
+
+
+      <div class="mx-0 mx-sm-auto bg-white">
+        <div class="card">
+          <div class="card-body">
+
+
+
+            <h1 class="mt-1 text-center">Baselines
+            </h1>
+            <p class="col-md-12 fs-5 mt-5 px-4" style="text-align: justify;">
+            <div class="px-4">
+              <h3 class="mt-1 text-center">Comment-to-code linking baselines</h3>
+
+
+              <div class="row align-items-md-stretch mt-4">
+                <div class="col-md-4">
+                  <div class="h-100 p-5 bg-light border rounded-3">
+                    <h2 class="text-center">Blank Line Baseline</h2>
+                    <div>
+                      This baseline is a straightforward heuristic assuming that a given <em>//inline comment </em>
+                      documents all following statements until a blank line is reached.</br>
+
+                      The code implementing the baseline can be found
+                      <a href="https://github.com/snippet-summarization/icse23/tree/main/Code/Linking/Blank-Line"
+                        class="link-primary" target="_blank">here</a>.
+
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="h-100 p-5 bg-light border rounded-3 darkgray">
+                    <h2 class="text-center">Token-Based SS</h2>
+                    <div>
+                      We compute the textual similarity between each comment in the test set and all statements in the
+                      method it belongs to. A statement is linked to the comment if its similarity with it is higher or
+                      equal than a threshold.</br>
+
+
+                     The code implementing the baseline can be found
+                      <a href="https://github.com/snippet-summarization/icse23/tree/main/Code/Linking/Token-Based-SS"
+                        class="link-primary" target="_blank">here</a>.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="h-100 p-5 text-white bg-dark rounded-3">
+                    <h2 class="text-center"> ML-based solution</h2>
+                      We reimplemented the approach by Chen et al. relying on the Random Forest machine learning
+                      algorithm to classify statements in a method as linked or not to a given comment. </br>
+                      The code implementing the baseline can be found 
+                      <a href="https://github.com/snippet-summarization/icse23/tree/main/Code/Linking/Random-Forest"
+                        class="link-primary" target="_blank">here</a>.
+
+
+                  </div>
+                </div>
+              </div>
+
+
+              <h3 class="mt-5 text-center">Snippets Summarization</h3>
+
+
+              <div class="row align-items-md-stretch mt-4">
+                <div class="col-md-4">
+                  <div class="h-100 p-5 bg-light border rounded-3">
+                    <h2 class="text-center">Jaccard Index</h2>
+                    <div>
+                      The Jaccard baseline identifies the most similar snippet by employing the Jaccard similarity index and summarize the snippet with the documentation of the found snippet.</br>
+
+                      The code implementing the baseline can be found
+                      <a href="https://github.com/snippet-summarization/icse23/tree/main/Code/Code-Snippet-Summarizers/IR-Jaccard"
+                        class="link-primary" target="_blank">here</a>.
+
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="h-100 p-5 bg-light border rounded-3 darkgray">
+                    <h2 class="text-center">TF-IDF</h2>
+                    <div>
+                      The TF-IDF baseline exploits a classic Vector Space Model with tf-idf weighting schema to compute the similarity between the Documented Code in the test instance and in each of the training instances.</br>
+
+
+                      The code implementing the baseline can be found
+                      <a href="https://github.com/snippet-summarization/icse23/tree/main/Code/Code-Snippet-Summarizers/IR-TF_IDF"
+                        class="link-primary" target="_blank">here</a>.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="h-100 p-5 text-white bg-dark border rounded-3">
+                    <h2 class="text-center">RL-BlockCom</h2>
+                    <div>
+                      We run STUNT on the same dataset used in <a href="https://www.sciencedirect.com/science/article/pii/S0950584920301427" class="link-primary" target="_blank">Towards automatically generating block comments for code snippets</a>. </br>
+
+
+                      The replication package provided by the authors can be found
+                      <a href="https://github.com/huangshh/RLComGen"
+                        class="link-primary" target="_blank">here</a>.
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+          </div>
+          </p>
+
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+      <span class="text-muted">Replication package for <em>Towards Summarizing Code Snippets Using Pre-Trained
+          Transformers</em>.</span>
+    </div>
+  </footer>
+
+
+</body>
+
+</html>

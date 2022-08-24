@@ -1,0 +1,15 @@
+/* buttons to the two studies*/
+
+.homepage_buttons{
+    margin: 0 20px;
+}
+
+.buttons{
+    display: inline-block!important;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 30px;
+    font-weight: bold;
+}

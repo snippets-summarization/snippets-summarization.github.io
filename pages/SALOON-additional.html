@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="generator" content="">
+  <title>SALOON: Predictions, Additional Analysis and Results</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sticky-footer-navbar/">
+
+
+  <!-- bootstrap 5.0.2 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+
+  <!-- Custom styles for this template -->
+  <link href="../css/sticky-footer-navbar.css" rel="stylesheet">
+
+
+  <!-- Custom styles for this sheet -->
+  <link href="../css/additional.css" id="CSS" rel="stylesheet">
+
+
+
+</head>
+
+<body class="d-flex flex-column h-100">
+
+  <header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="dataset.html">Datasets and Examples of Instances</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="source.html">Source Code</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="baselines.html">Baselines</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="SALOON-additional.html">SALOON: Predictions, Additional Analysis and Results
+                and Results</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="STUNT-additional.html">STUNT: Predictions, Additional Analysis and Results</a>
+            </li>
+          </ul>
+          <!--
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>-->
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Begin page content -->
+  <main class="flex-shrink-0">
+    <div class="container">
+
+
+      <div class="mx-0 mx-sm-auto bg-white">
+        <div class="card">
+          <div class="card-body">
+
+
+
+            <h1 class="mt-1 text-center">SALOON: Predictions, Additional Analysis and Results
+            </h1>
+            <p class="col-md-12 fs-5 mt-5 px-4" style="text-align: justify;">
+
+            <h3 class="mt-3 text-center">Hyper Parameter Tuning </h3>
+
+
+            <div class="px-4">
+
+              We experimented with the following configurations for the Hyper Parameter Tuning phase of the SALOON
+              model:
+
+              <table id="HP" class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Learning Rate</th>
+                    <th scope="col">Parameters</th>
+                    <th scope="col" class="center">Pre-Trained</th>
+                    <th scope="col" class="center">No Pre-Trained</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">C-LR</th>
+                    <td>LR</td>
+                    <td>0.001</td>
+                    <td>0.001</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="align-middle">ST-LR</th>
+                    <td>LR<sub>starting</sub> </br> LR<sub>max</sub> </br> Ratio </br> Cut </td>
+                    <td>0.001 </br> 0.01 </br> 32 </br> 0.1</td>
+                    <td>0.001 </br> 0.01 </br> 32 </br> 0.1</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="align-middle">ISQ-LR</th>
+                    <td> LR<sub>starting</sub> </br> Warmup</td>
+                    <td>0.01 </br> 10.000 </td>
+                    <td>0.01 </br> 10.000 </td>
+
+                  </tr>
+
+                  <tr>
+                    <th scope="row" class="align-middle">PD-LR</th>
+                    <td>LR<sub>starting</sub> </br> LR<sub>end</sub> </br> Power </td>
+                    <td>0.01 </br> 0.01 </br> 0.5</td>
+                    <td>0.001 </br> 0.001 </br> 0.5</td>
+                  </tr>
+                  <tr>
+
+                </tbody>
+              </table>
+
+
+            </div>
+
+            <h3 class="mt-5 text-center">Results on the evaluation set </h3>
+            <div class="px-4">
+
+              The results achieved by the four configuations on the evaluation set, for the classification and linking
+              tasks, are reported in the following tables:
+
+              <h5 class="mt-5 text-center">Classification </h5>
+
+              The following table contains the percentage of correct predictions for classification task:
+
+
+              <table id="CL" class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Learning Rate</th>
+                    <th scope="col" class="center">Pre-Trained</th>
+                    <th scope="col" class="center">No Pre-Trained</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">C-LR</th>
+                    <td>83.40</td>
+                    <td>76.64</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">ST-LR</th>
+                    <td>82.90</td>
+                    <td>78.91</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">ISQ-LR</th>
+                    <td>82.80</td>
+                    <td>73.64</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">PD-LR</th>
+                    <td>83.92</td>
+                    <td>74.07</td>
+                  </tr>
+
+                </tbody>
+              </table>
+
+            </div>
+
+
+
+            <h5 class="mt-5 text-center">Linking </h5>
+            <div class="px-4">
+
+              The following table contains the precision (P) and recall (R) for the linking task:
+
+              <table id="LK" class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Learning Rate</th>
+                    <th scope="col" class="center">Pre-Trained</th>
+                    <th scope="col" class="center">No Pre-Trained</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">C-LR</th>
+                    <td>(P, R) = (0.83, 0.88)</td>
+                    <td>(P, R) = (0.38, 0.38)</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">ST-LR</th>
+                    <td>(P, R) = (0.83, 0.87)</td>
+                    <td>(P, R) = (0.56, 0.64)</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">ISQ-LR</th>
+                    <td>(P, R) = (0.83, 0.88)</td>
+                    <td>(P, R) = (0.45, 0.55)</td>
+
+                  </tr>
+                  <tr>
+                    <th scope="row">PD-LR</th>
+                    <td>(P, R) = (0.79, 0.89)</td>
+                    <td>(P, R) = (0.51, 0.60)</td>
+
+                  </tr>
+
+                </tbody>
+              </table>
+
+            </div>
+
+            <h3 class="mt-5 text-center">Models </h3>
+            <div class="px-4">
+
+              We releas all our trained models.
+              <!-- Please keep in mind that if a baseline is not present, it means that there is no model to share (e.g. for the Random Forest baseline, there is no model to share since we only have to apply the Random Forest algorithm on the features file created). -->
+
+              You can find:
+              <ol>
+                <li> the trained SALOON model <a
+                    href="https://drive.google.com/drive/folders/1FBtKYIFW9DEFyti7i499V9iYnYGn1xPm" class="link-primary"
+                    target="_blank">here</a></li>
+
+                <li> the pretrained model used as backbone for the SALOON and STUNT models <a
+                    href="https://drive.google.com/drive/folders/1nYTV8_18QRR4TmTvmeoRZzCbS6iCr4mR" class="link-primary"
+                    target="_blank">here</a></li>
+
+              </ol>
+
+            </div>
+
+            <h3 class="mt-5 text-center">Predictions and Results </h3>
+            <div class="px-4">
+
+              The predictions generated by the SALOON model and the three baselines can be found <a
+                href="https://drive.google.com/drive/folders/1LlNDvm_65jtdJ3QG6spP793JmXe9rZYS" class="link-primary"
+                target="_blank">here</a>.</br>
+
+              We also release the results, in terms of precision and recall, that are available <a
+              href="https://drive.google.com/drive/folders/1TEcOYV9h1SGtVPFLRudESS7s9uYqQ3pY" class="link-primary"
+              target="_blank">here</a>.
+
+            </div>
+
+
+
+            </p>
+
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    </div>
+  </main>
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+
+  <footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+      <span class="text-muted">Replication package for <em>Towards Summarizing Code Snippets Using Pre-Trained
+          Transformers</em>.</span>
+    </div>
+  </footer>
+
+
+</body>
+
+</html>

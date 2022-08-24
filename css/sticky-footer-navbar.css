@@ -1,0 +1,29 @@
+main > .container {
+  padding: 100px 0px 0px 0px;
+  background-color: rgb(248, 249, 250);
+}
+
+body{
+  background-color: rgb(248, 249, 250);
+
+}
+
+/* back button*/
+
+.box-back {
+  display: flex;
+}
+
+#back {  text-decoration: none;
+  color: inherit; 
+  display: flex
+}
+  
+.buttons-back{
+  width: 15px;
+  height: 30px;
+  margin-left: 0px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+  
