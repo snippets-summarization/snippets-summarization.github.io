@@ -55,11 +55,11 @@
               <a class="nav-link" aria-current="page" href="pages/baselines.html">Baselines</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="SALOON-additional.html">SALOON: Predictions, Additional Analysis and Results
+              <a class="nav-link" aria-current="page" href="pages/SALOON-additional.html">SALOON: Predictions, Additional Analysis and Results
                 and Results</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="STUNT-additional.html">STUNT: Predictions, Additional Analysis and Results</a>
+              <a class="nav-link" aria-current="page" href="pages/STUNT-additional.html">STUNT: Predictions, Additional Analysis and Results</a>
             </li>
 
           </ul>
@@ -89,20 +89,20 @@
             <p class="col-md-12 fs-5 mt-5 px-4" style="text-align: justify;">
 
               When comprehending code, a helping hand may come from the <b>natural language comments</b> documenting it that,
-              unfortunately, are not always there. To support developers in such a scenario several techniques have been
+              unfortunately, are not always there. To support developers in such a scenario, several techniques have been
               presented to automatically generate natural language summaries for a given code. Most recent approaches
-              exploit <b>deep learning (DL) models</b> to automatically document classes or functions, while very little effort
+              exploit <b>deep learning (DL)</b> to automatically document classes or functions, while very little effort
               has been devoted to more fine-grained documentation (e.g., documenting code snippets or even a single
               statement). </br>Such a design choice is dictated by the availability of training data: For example, in the
               case of Java, it is easy to create datasets composed by pairs <em>&lt;method, javadoc&gt;</em> that can be fed to DL
                 models to teach them how to summarize a method. Such a <b>comment-to-code linking</b> is instead non-trivial
                 when it comes to inner comments (i.e., comments within a function) documenting a few statements. </br>In this
                 work, we take all steps needed to train a DL model to automatically document code snippets. </br>First, we
-                <em>manually built</em> a dataset featuring 11.5k comments that have been (i) classified based on their type
+                <em>manually built</em> a dataset featuring 6.6k comments that have been (i) classified based on their type
                 (e.g., code summary, TODO), and (ii) linked to the code statements they document. </br>Second, we used such a
                 dataset to <em>train a multi-task DL model</em> taking as input a comment and being able to (i) classify whether
                 it represents a <em>"code summary"</em> or not, and (ii) link it to the code statements it documents. Our trained
-                model identifies code summaries with 83% accuracy and is able to link them to the documented lines of
+                model identifies code summaries with 84% accuracy and is able to link them to the documented lines of
                 code with recall and precision higher than 80%. </br>Third, we run this model on 10k open source projects,
                 automatically identifying code summaries and linking them to the related documented code. This allowed
                 to build a large-scale dataset of documented code snippets that has then been used to train a new DL
